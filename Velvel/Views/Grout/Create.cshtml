@@ -1,0 +1,51 @@
+﻿@model Velvel.Models.Project.Attribute.PricedViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@if (Model != null)
+{
+
+    <div class="row-fluid">
+
+        <div class="box span6">
+            <div class="box-header" data-original-title>
+                <h2><i class="halflings-icon edit"></i><span class="break"></span>Create A Project</h2>
+                <div class="box-icon">
+                    <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+                    <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                    <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                @using (Html.BeginForm("Create", "Grout",
+                    new { ProjectId = Model.ProjectId,CustomerId=Model.CustomerId,Id=Model.Id },
+                    FormMethod.Post,
+                    new { @class = "form-horizontal", role = "form" }))
+                {
+
+                    @Html.AntiForgeryToken()
+                    <fieldset>
+                        <div class="control-group">
+                            @Html.LabelFor(m => m.Name, new {@class = "control-label"})
+                            <div class="controls">
+                                @Html.TextAreaFor(m => m.Name, Model.Name)
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            @Html.LabelFor(m => m.Price, new { @class = "control-label" })
+                            <div class="controls">
+                                @Html.TextAreaFor(m => m.Price, Model.Price)
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <input type="submit" class="btn btn-primary" value="Save" />
+                            <button class="btn">Cancel</button>
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div><!--/span-->
+    </div>
+}

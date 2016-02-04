@@ -1,0 +1,35 @@
+﻿@using Velvel.Domain.Data
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    
+}
+@if (Request.IsAuthenticated)
+{
+    if ((User.IsInRole("Admin") || User.IsInRole("Manager")))
+    {
+        <ul class="nav nav-pills">
+            <li role="presentation">
+                <a href="@Url.Action("Details", "Project", new {@ProjectId = Model.Id, @CustomerId = Model.CustomerId})">
+                    <i class="fa fa-user-md"></i><span class="hidden-tablet">
+                        Details
+                    </span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="@Url.Action("AddManager", "Project", new {@ProjectId = Model.Id, @CustomerId = Model.CustomerId})">
+                    <i class="fa fa-user-md"></i><span class="hidden-tablet">
+                        Add Manager
+                    </span>
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="@Url.Action("Settings", "Project", new {@ProjectId = Model.Id, @CustomerId = Model.CustomerId})">
+                    <i class="fa fa-user-md"></i><span class="hidden-tablet">
+                        Settings
+                    </span>
+                </a>
+            </li>
+        </ul>
+    }
+    @RenderBody()
+}

@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Velvel.Models.Project.ProjectViewModel>
+
+@{
+    ViewBag.Title = "Projects Overview";
+}
+<h2>Projects Overview</h2>
+<div class="col-md-12">
+    <div class="button-holder">
+        <a class="btn btn-success" href="@Url.Action("Create",FormMethod.Post)">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+</div>
+
+@if (Model != null)
+{
+    foreach (var group in Model.Select((x, index) => new { element = x, index }).GroupBy(x => x.index / 2, x => x.element))
+    {
+        <div class="row-fluid">
+            @foreach (var item in group)
+            {
+                <div class="box black span6" ontablet="span6" ondesktop="span6">
+                    <div class="box-header">
+                        <h2>
+                            <a href="@Url.Action("Details",new { ProjectId = item.Id})">
+                                <i class="halflings-icon white building"></i><span class="break"></span>
+                                @item.Name
+                            </a>
+                        </h2>
+                        <div class="box-icon">
+                            <a href="@Url.Action("Settings",new { ProjectId = item.Id})" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+                            <a href="@Url.Action("Edit",new { ProjectId = item.Id})"><i class="halflings-icon white pencil"></i></a>
+                            <a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+                        </div>
+                    </div>
+                    @if (!item.Customers.Any())
+                    {
+                        continue;
+                    }
+                    <div class="box-content">
+                        <ul class="dashboard-list metro">
+                            @foreach (var customer in item.Customers)
+                            {
+                                <li>
+                                    <a href="@Url.Action("Details", new {ProjectId = item.Id, CustomerId = customer.Value})">
+                                        <i class="icon-arrow-up green"></i>
+                                        <strong>@customer.Text</strong>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div><!--/span-->
+            }
+        </div>
+    }
+
+}
+
+        @*<p>
+                @Html.ActionLink("Create New", "Create")
+            </p>*@
+        @*<table class="table">
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                <a href="../Project/Details/@item.Id">
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </a>
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { ProjectId = item.Id }) |
+                                @Html.ActionLink("Settings", "Settings", new { ProjectId = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                        if (!item.Customers.Any())
+                        {
+                            continue;
+                        }
+                        <tr>
+                            <td></td>
+                            <td>Project Customers</td>
+                        </tr>
+                        foreach (var customer in item.Customers)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>
+                                    @customer.Text
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { projectId = item.Id, customerId = customer.Value })
+                                </td>
+                            </tr>
+
+                        }
+                    }
+
+                }
+            </table>*@

@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>הוספה</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="ChangeDescription" xml:space="preserve">
+    <value>תאור השינוי</value>
+  </data>
+  <data name="ChangePage" xml:space="preserve">
+    <value>דף שינוי</value>
+  </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>בחר קובץ</value>
+  </data>
+  <data name="CreateCustomer" xml:space="preserve">
+    <value>הוספת לקוח</value>
+  </data>
+  <data name="CreateManager" xml:space="preserve">
+    <value>הוספת מנהל</value>
+  </data>
+  <data name="CreateProject" xml:space="preserve">
+    <value>הוספת פרויקט</value>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>לקוח</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>לקוחות</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>תאריך</value>
+  </data>
+  <data name="DefectPage" xml:space="preserve">
+    <value>דף ליקוי</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>תיאור</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>הורדה</value>
+  </data>
+  <data name="EditCustomer" xml:space="preserve">
+    <value>עריכת לקוח</value>
+  </data>
+  <data name="EditManager" xml:space="preserve">
+    <value>עריכת מנהל</value>
+  </data>
+  <data name="EditProject" xml:space="preserve">
+    <value>עריכת פרויקט</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>דואר אלקטרוני</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>כניסה</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>יציאה</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>שם קובץ</value>
+  </data>
+  <data name="FilesOverview" xml:space="preserve">
+    <value>קבצים</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>שם פרטי</value>
+  </data>
+  <data name="FlooringDescription" xml:space="preserve">
+    <value>תאור הריצוף</value>
+  </data>
+  <data name="FlooringPage" xml:space="preserve">
+    <value>דף ריצוף</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>שלום</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>בית</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>שם משפחה</value>
+  </data>
+  <data name="LoggOff" xml:space="preserve">
+    <value>יציאה</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>כניסת משתמש</value>
+  </data>
+  <data name="ManagerName" xml:space="preserve">
+    <value>מנהל</value>
+  </data>
+  <data name="Managers" xml:space="preserve">
+    <value>מנהלים</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="NoProjectFound" xml:space="preserve">
+    <value>לא קיימים פרויקטים בחשבון זה</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>סקירה</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>סיסמה</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>אימות סיסמה</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>טלפון</value>
+  </data>
+  <data name="Plans" xml:space="preserve">
+    <value>תכניות</value>
+  </data>
+  <data name="PlumbingPage" xml:space="preserve">
+    <value>דף אינסטלציה</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>מחיר</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>פרויקט</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>פרויקטים</value>
+  </data>
+  <data name="Quantities" xml:space="preserve">
+    <value>יחידות</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>דו"ח</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>חדר</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>שמירה</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>הגדרות</value>
+  </data>
+  <data name="SignedDocuments" xml:space="preserve">
+    <value>מסמכים חתומים</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>סטטוס</value>
+  </data>
+  <data name="TableAccessory" xml:space="preserve">
+    <value>אביזר</value>
+  </data>
+  <data name="TableAccessoryTitle" xml:space="preserve">
+    <value>טבלת אביזרים</value>
+  </data>
+  <data name="TableApproved" xml:space="preserve">
+    <value>אושר</value>
+  </data>
+  <data name="TableChangesTitle" xml:space="preserve">
+    <value>טבלת שינויים</value>
+  </data>
+  <data name="TableDefectTitle" xml:space="preserve">
+    <value>טבלת ליקויים</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>תאור</value>
+  </data>
+  <data name="TableFlooringTitle" xml:space="preserve">
+    <value>טבלת ריצוף</value>
+  </data>
+  <data name="TableGrout" xml:space="preserve">
+    <value>רובה</value>
+  </data>
+  <data name="TableGroutTitle" xml:space="preserve">
+    <value>טבלת רובה</value>
+  </data>
+  <data name="TableMeasurement" xml:space="preserve">
+    <value>מידה</value>
+  </data>
+  <data name="TableModel" xml:space="preserve">
+    <value>מודל</value>
+  </data>
+  <data name="TableModelTitle" xml:space="preserve">
+    <value>טבלת מודל ריצוף</value>
+  </data>
+  <data name="TablePlumbingTitle" xml:space="preserve">
+    <value>טבלת סניטריה</value>
+  </data>
+  <data name="TablePrice" xml:space="preserve">
+    <value>מחיר</value>
+  </data>
+  <data name="TablePricePerUnit" xml:space="preserve">
+    <value>מחיר ליחידה</value>
+  </data>
+  <data name="TableRoomTitle" xml:space="preserve">
+    <value>טבלת חדרים</value>
+  </data>
+  <data name="TableUnitType" xml:space="preserve">
+    <value>יחידת מדידה</value>
+  </data>
+  <data name="TotalPrice" xml:space="preserve">
+    <value>סה"כ מחיר</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>העלאה</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>צפיה</value>
+  </data>
+</root>

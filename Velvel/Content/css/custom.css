@@ -1,0 +1,61 @@
+﻿body {
+}
+
+.dropdown form {
+    margin: 0px;
+}
+
+.button-holder {
+    margin: 0px 0px 25px 0px;
+}
+
+.box-header a {
+    color: white;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.box-header {
+    background: #222 !important;
+    color: white;
+}
+
+.box {
+    border: 1px solid #222;
+}
+
+.navbar .project-header {
+    color: white;
+    font-size: 16px;
+    color: #fff !important;
+    text-shadow: none !important;
+    padding: 10px 25px !important;
+    direction: rtl;
+}
+
+    .navbar .project-header .fa {
+        margin: 0px 3px;
+    }
+
+ul.messagesList li span.date {
+    width: 18%;
+}
+
+#send-line {
+}
+
+    #send-line textarea {
+            resize: none;
+    margin: 0;
+    width: 83%;
+    padding: 3px;
+    }
+
+    #send-line button {
+        height: 67px;
+    width: 14%;
+    margin: 0;
+    padding: 0px;
+    }

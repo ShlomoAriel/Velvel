@@ -1,0 +1,21 @@
+﻿@model Velvel.Models.Project.ProjectViewModel
+@{
+    Layout = "/Views/Shared/_ProjectLayout.cshtml";
+    ViewBag.Title = "Details";
+    if (Model.Name != null)
+    {
+        ViewBag.ProjectTitle = Model.Name;
+    }
+    if (Model.Customer != null)
+    {
+        ViewBag.CustomerName = Model.Customer.Email;    
+    }
+    
+}
+
+<h2>@Model.Name</h2>
+@Html.Action("Index","Changes",new {@ProjectId=Model.Id,Model.CustomerId})
+@Html.Action("Index", "Defect", new { @ProjectId = Model.Id, Model.CustomerId })
+@Html.Action("Index", "Plumbing", new { @ProjectId = Model.Id, Model.CustomerId })
+@Html.Action("Index", "Flooring", new { @ProjectId = Model.Id, Model.CustomerId })
+

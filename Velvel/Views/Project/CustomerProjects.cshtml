@@ -1,0 +1,58 @@
+﻿@model Velvel.Models.Project.CustomerProjectsViewModel
+
+@{
+    ViewBag.Title = "Customer Projects";
+}
+
+<h2>@ViewBag.Title </h2>
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model.Projects)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    <a href="../Project/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </a>
+                </td>
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new {ProjectId = item.Id, Model.CustomerId})
+                    @if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Manager")))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new {id = item.Id})
+                        @Html.ActionLink("Settings", "Settings", new {id = item.Id})
+                        @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                    }
+
+                </td>
+                <td>
+                    <a href="@Url.Action("Details",new { ProjectId = item.Id})">
+                        <i class="halflings-icon white building"></i><span class="break"></span>
+                        @item.Name
+                    </a>
+                </td>
+            </tr>
+
+        }
+    }
+</table>
+

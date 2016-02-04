@@ -1,0 +1,80 @@
+﻿@model Velvel.Models.Project.Table.TableEnteriesViewModel
+@{
+    ViewBag.Title = "Changes";
+    Layout = null;
+}
+<div class="row-fluid">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <span class="break"></span>@Resources.CommonHebrew.TableChangesTitle
+
+            <div class="box-icon">
+                <a href="@Url.Action("Create", new {@ProjectId = @Model.ProjectId, @CustomerId = Model.CustomerId})">
+                    <i class="fa fa-plus"></i>
+                </a>
+                <a href="#" class="btn-setting"><i class="halflings-icon wrench white"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up white"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon remove white"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Resources.CommonHebrew.Description</th>
+                        <th>@Resources.CommonHebrew.Room</th>
+                        <th>@Resources.CommonHebrew.Status</th>
+                        <th>@Resources.CommonHebrew.Date</th>
+                        <th>@Resources.CommonHebrew.TableMeasurement</th>
+                        <th>@Resources.CommonHebrew.Quantities</th>
+                        <th>@Resources.CommonHebrew.TablePrice</th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                @if (Model.Enteries.Any())
+                {
+                    <tbody>
+                        @foreach (var item in Model.Enteries)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Room.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MeasurementUnit.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quanitty)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td class="center">
+                                    @if ((User.IsInRole("Admin") || User.IsInRole("Manager")))
+                                    {
+                                        <a class="btn btn-info" href="@Url.Action("Edit", new {@Id = item.Id, @ProjectId = Model.ProjectId, @CustomerId = Model.CustomerId})">
+                                            <i class="halflings-icon white pencil"></i>
+                                        </a>
+                                        <a class="btn btn-danger" href="@Url.Action("Delete", new {@Id = item.Id, @ProjectId = Model.ProjectId, @CustomerId = Model.CustomerId})">
+                                            <i class="halflings-icon white trash"></i>
+                                        </a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                }
+            </table>
+        </div>
+    </div>
+</div>
