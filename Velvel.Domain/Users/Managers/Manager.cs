@@ -11,7 +11,7 @@ namespace Velvel.Domain.Users.Managers
         public string Email { get; set; }
         public string Phone { get; set; }
 
-        public  ICollection<Project> Projects { get; set; }
+        public virtual ICollection<Project> Projects { get; set; }
     }
     public class Manager : User
     {

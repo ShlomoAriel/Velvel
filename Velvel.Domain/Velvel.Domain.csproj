@@ -60,58 +60,14 @@
   <ItemGroup>
     <Compile Include="Attributes\AttributeEntity.cs" />
     <Compile Include="Data\Comment.cs" />
-    <Compile Include="Migrations\201601230658332_comments.cs" />
-    <Compile Include="Migrations\201601230658332_comments.Designer.cs">
-      <DependentUpon>201601230658332_comments.cs</DependentUpon>
+    <Compile Include="Migrations\201602160701441_initial.cs" />
+    <Compile Include="Migrations\201602160701441_initial.Designer.cs">
+      <DependentUpon>201602160701441_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601240834349_comments2.cs" />
-    <Compile Include="Migrations\201601240834349_comments2.Designer.cs">
-      <DependentUpon>201601240834349_comments2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201601281135285_blah.cs" />
-    <Compile Include="Migrations\201601281135285_blah.Designer.cs">
-      <DependentUpon>201601281135285_blah.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\PricedEntityService.cs" />
     <Compile Include="Services\ProjectEntityService.cs" />
-    <Compile Include="Migrations\201512191102195_table-order.cs" />
-    <Compile Include="Migrations\201512191102195_table-order.Designer.cs">
-      <DependentUpon>201512191102195_table-order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512191140229_init5.cs" />
-    <Compile Include="Migrations\201512191140229_init5.Designer.cs">
-      <DependentUpon>201512191140229_init5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512201423566_init7.cs" />
-    <Compile Include="Migrations\201512201423566_init7.Designer.cs">
-      <DependentUpon>201512201423566_init7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512202042070_init8.cs" />
-    <Compile Include="Migrations\201512202042070_init8.Designer.cs">
-      <DependentUpon>201512202042070_init8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512220737442_addmeasurement.cs" />
-    <Compile Include="Migrations\201512220737442_addmeasurement.Designer.cs">
-      <DependentUpon>201512220737442_addmeasurement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512221309282_addmeasurement2.cs" />
-    <Compile Include="Migrations\201512221309282_addmeasurement2.Designer.cs">
-      <DependentUpon>201512221309282_addmeasurement2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512221333460_addmeasurement3.cs" />
-    <Compile Include="Migrations\201512221333460_addmeasurement3.Designer.cs">
-      <DependentUpon>201512221333460_addmeasurement3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512251615440_remove-measurement.cs" />
-    <Compile Include="Migrations\201512251615440_remove-measurement.Designer.cs">
-      <DependentUpon>201512251615440_remove-measurement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201512280601539_base-edited.cs" />
-    <Compile Include="Migrations\201512280601539_base-edited.Designer.cs">
-      <DependentUpon>201512280601539_base-edited.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Tables\ChangesAndAdditions\Changes.cs" />
     <Compile Include="Tables\ChangesAndAdditions\ChangesMapping.cs" />
     <Compile Include="Attributes\Common\Common.cs" />
@@ -120,7 +76,6 @@
     <Compile Include="Services\FlooringService.cs" />
     <Compile Include="Services\PlumbingService.cs" />
     <Compile Include="Users\Customers\Customer.cs" />
-    <Compile Include="Users\Customers\CustomerMapping.cs" />
     <Compile Include="Users\Customers\CustomerService.cs" />
     <Compile Include="Data\BaseEntity.cs" />
     <Compile Include="Data\IRepository.cs" />
@@ -132,7 +87,6 @@
     <Compile Include="Tables\Floorings\FlooringMapping.cs" />
     <Compile Include="Users\IdentityModels.cs" />
     <Compile Include="Users\Managers\Manager.cs" />
-    <Compile Include="Users\Managers\ManagerMapping.cs" />
     <Compile Include="Users\Managers\ManagerService.cs" />
     <Compile Include="Tables\Plumbings\Plumbing.cs" />
     <Compile Include="Tables\Plumbings\PlumbingMapping.cs" />
@@ -147,45 +101,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512191102195_table-order.resx">
-      <DependentUpon>201512191102195_table-order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512191140229_init5.resx">
-      <DependentUpon>201512191140229_init5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512201423566_init7.resx">
-      <DependentUpon>201512201423566_init7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512202042070_init8.resx">
-      <DependentUpon>201512202042070_init8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512220737442_addmeasurement.resx">
-      <DependentUpon>201512220737442_addmeasurement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512221309282_addmeasurement2.resx">
-      <DependentUpon>201512221309282_addmeasurement2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512221333460_addmeasurement3.resx">
-      <DependentUpon>201512221333460_addmeasurement3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512251615440_remove-measurement.resx">
-      <DependentUpon>201512251615440_remove-measurement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512280601539_base-edited.resx">
-      <DependentUpon>201512280601539_base-edited.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601230658332_comments.resx">
-      <DependentUpon>201601230658332_comments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601240834349_comments2.resx">
-      <DependentUpon>201601240834349_comments2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201601281135285_blah.resx">
-      <DependentUpon>201601281135285_blah.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <EmbeddedResource Include="Migrations\201602160701441_initial.resx">
+      <DependentUpon>201602160701441_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

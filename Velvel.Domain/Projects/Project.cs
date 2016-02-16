@@ -9,7 +9,7 @@ namespace Velvel.Domain.Projects
     public class Project : BaseEntity
     {
         public bool Active { get; set; }
-        public  ICollection<Manager> Managers { get; set; }
-        public  ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Manager> Managers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

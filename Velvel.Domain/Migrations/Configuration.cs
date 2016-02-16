@@ -5,14 +5,14 @@ namespace Velvel.Domain.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Velvel.Domain.Data.MyDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Velvel.Domain.Users.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Velvel.Domain.Data.MyDbContext context)
+        protected override void Seed(Velvel.Domain.Users.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

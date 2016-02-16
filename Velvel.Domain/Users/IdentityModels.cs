@@ -43,30 +43,12 @@ namespace Velvel.Domain.Users
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Manager>().ToTable("Managers");
-        //    modelBuilder.Entity<Customer>().ToTable("Customers");
-        //    modelBuilder.Entity<Manager>().
-        //                    HasMany(c => c.Projects).
-        //                    WithMany(p => p.Managers).
-        //                    Map(m =>
-        //                    {
-        //                        m.MapLeftKey("ManagerId");
-        //                        m.MapRightKey("ProjectId");
-        //                        m.ToTable("ManagerProjects");
-        //                    });
-        //    modelBuilder.Entity<Customer>().
-        //                    HasMany(c => c.Projects).
-        //                    WithMany(p => p.Customers).
-        //                    Map(m =>
-        //                    {
-        //                        m.MapLeftKey("CustomerId");
-        //                        m.MapRightKey("ProjectId");
-        //                        m.ToTable("CustomerProjects");
-        //                    });
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Manager>().ToTable("Managers");
+            modelBuilder.Entity<Customer>().ToTable("Customers");
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Changes> Changes { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Grout> Grouts { get; set; }
