@@ -68,6 +68,8 @@ namespace Velvel.Domain.Users
         public DbSet<MeasurementUnit> UnitType { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Manager> Managers { get; set; }
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

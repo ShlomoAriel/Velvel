@@ -3,7 +3,7 @@ namespace Velvel.Domain.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -123,11 +123,8 @@ namespace Velvel.Domain.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Active = c.Boolean(nullable: false),
                         Name = c.String(),
-                        User_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Users", t => t.User_Id)
-                .Index(t => t.User_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Defects",
@@ -323,38 +320,56 @@ namespace Velvel.Domain.Migrations
                 .Index(t => t.UserId);
             
             CreateTable(
+                "dbo.ProjectCustomers",
+                c => new
+                    {
+                        Project_Id = c.Int(nullable: false),
+                        Customer_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Project_Id, t.Customer_Id })
+                .ForeignKey("dbo.Projects", t => t.Project_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.Customer_Id, cascadeDelete: true)
+                .Index(t => t.Project_Id)
+                .Index(t => t.Customer_Id);
+            
+            CreateTable(
+                "dbo.ManagerProjects",
+                c => new
+                    {
+                        Manager_Id = c.Int(nullable: false),
+                        Project_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Manager_Id, t.Project_Id })
+                .ForeignKey("dbo.Managers", t => t.Manager_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Projects", t => t.Project_Id, cascadeDelete: true)
+                .Index(t => t.Manager_Id)
+                .Index(t => t.Project_Id);
+            
+            CreateTable(
                 "dbo.Customers",
                 c => new
                     {
                         Id = c.Int(nullable: false),
-                        Project_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.Id)
-                .ForeignKey("dbo.Projects", t => t.Project_Id)
-                .Index(t => t.Id)
-                .Index(t => t.Project_Id);
+                .Index(t => t.Id);
             
             CreateTable(
                 "dbo.Managers",
                 c => new
                     {
                         Id = c.Int(nullable: false),
-                        Project_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.Id)
-                .ForeignKey("dbo.Projects", t => t.Project_Id)
-                .Index(t => t.Id)
-                .Index(t => t.Project_Id);
+                .Index(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Managers", "Project_Id", "dbo.Projects");
             DropForeignKey("dbo.Managers", "Id", "dbo.Users");
-            DropForeignKey("dbo.Customers", "Project_Id", "dbo.Projects");
             DropForeignKey("dbo.Customers", "Id", "dbo.Users");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "ManagerId", "dbo.Managers");
@@ -378,16 +393,21 @@ namespace Velvel.Domain.Migrations
             DropForeignKey("dbo.Defects", "MeasurementUnitId", "dbo.MeasurementUnits");
             DropForeignKey("dbo.Defects", "CommentGroupId", "dbo.CommentGroups");
             DropForeignKey("dbo.Comments", "UserId", "dbo.Users");
-            DropForeignKey("dbo.Projects", "User_Id", "dbo.Users");
+            DropForeignKey("dbo.ManagerProjects", "Project_Id", "dbo.Projects");
+            DropForeignKey("dbo.ManagerProjects", "Manager_Id", "dbo.Managers");
+            DropForeignKey("dbo.ProjectCustomers", "Customer_Id", "dbo.Customers");
+            DropForeignKey("dbo.ProjectCustomers", "Project_Id", "dbo.Projects");
             DropForeignKey("dbo.Comments", "CommentGroupId", "dbo.CommentGroups");
             DropForeignKey("dbo.Changes", "StatusId", "dbo.Status");
             DropForeignKey("dbo.Changes", "RoomId", "dbo.Rooms");
             DropForeignKey("dbo.Changes", "MeasurementUnitId", "dbo.MeasurementUnits");
             DropForeignKey("dbo.Changes", "CommentGroupId", "dbo.CommentGroups");
-            DropIndex("dbo.Managers", new[] { "Project_Id" });
             DropIndex("dbo.Managers", new[] { "Id" });
-            DropIndex("dbo.Customers", new[] { "Project_Id" });
             DropIndex("dbo.Customers", new[] { "Id" });
+            DropIndex("dbo.ManagerProjects", new[] { "Project_Id" });
+            DropIndex("dbo.ManagerProjects", new[] { "Manager_Id" });
+            DropIndex("dbo.ProjectCustomers", new[] { "Customer_Id" });
+            DropIndex("dbo.ProjectCustomers", new[] { "Project_Id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
@@ -411,7 +431,6 @@ namespace Velvel.Domain.Migrations
             DropIndex("dbo.Defects", new[] { "RoomId" });
             DropIndex("dbo.Defects", new[] { "MeasurementUnitId" });
             DropIndex("dbo.Defects", new[] { "StatusId" });
-            DropIndex("dbo.Projects", new[] { "User_Id" });
             DropIndex("dbo.Comments", new[] { "UserId" });
             DropIndex("dbo.Comments", new[] { "CommentGroupId" });
             DropIndex("dbo.Changes", new[] { "CommentGroupId" });
@@ -420,6 +439,8 @@ namespace Velvel.Domain.Migrations
             DropIndex("dbo.Changes", new[] { "StatusId" });
             DropTable("dbo.Managers");
             DropTable("dbo.Customers");
+            DropTable("dbo.ManagerProjects");
+            DropTable("dbo.ProjectCustomers");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
